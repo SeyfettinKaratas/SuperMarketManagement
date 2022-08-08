@@ -1,0 +1,29 @@
+﻿@inject UseCases.UseCaseInterfaces.IViewProductsUseCase ViewProductsUseCase
+
+<h3>Products</h3>
+
+
+@if (products != null)
+{
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+}
+
+@code {
+    private IEnumerable<Product> products;
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        ViewProductsUseCase.Execute();
+    }
+}
